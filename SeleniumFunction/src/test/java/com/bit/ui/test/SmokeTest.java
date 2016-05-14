@@ -19,11 +19,26 @@ import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.internal.Locatable;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class SmokeTest
 {
-	FirefoxDriver dr=new FirefoxDriver();
+	FirefoxDriver dr;
+
+	@BeforeTest
+	public void m1()
+	{
+		String b=System.getProperty("browser");
+		if(b.equals("f"))
+		{
+			dr=new FirefoxDriver();
+		}
+		else if(b.equals("c"))
+		{
+			dr=new FirefoxDriver();
+		}
+	}
 	
 	@Test
 	public void alertHandle() throws InterruptedException
