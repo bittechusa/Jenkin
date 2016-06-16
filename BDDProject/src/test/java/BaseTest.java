@@ -10,6 +10,7 @@ public class BaseTest
 	public HomePage start()
 	{
 	
+		System.out.println("hi");
 		dr.get("http://www.eshopper24.com");
 		dr.manage().window().maximize();
 		return new HomePage(dr);
